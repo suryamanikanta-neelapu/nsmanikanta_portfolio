@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neelapu Surya Manikanta - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #111827; /* Dark background */
+            color: #d1d5db; /* Light gray text */
+        }
+        /* Gradient text for titles */
+        .gradient-text {
+            @apply bg-gradient-to-r from-purple-400 to-indigo-500 bg-clip-text text-transparent;
+        }
+        /* Base styles for sections with fade-in animation */
+        .section {
+            @apply py-20 sm:py-24;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .section-title {
+            @apply text-4xl sm:text-5xl font-extrabold mb-12 text-center;
+        }
+        /* Updated card style for dark mode */
+        .card {
+            @apply bg-gray-800/50 backdrop-blur-sm rounded-xl overflow-hidden transition-all duration-300 hover:shadow-indigo-500/20 hover:shadow-2xl hover:-translate-y-2;
+        }
+        /* Button styles */
+        .btn {
+            @apply inline-flex items-center justify-center px-6 py-3 rounded-lg font-bold transition-all duration-300 transform;
+        }
+        .btn-primary {
+            @apply bg-indigo-600 text-white hover:bg-indigo-500 hover:scale-105;
+        }
+        .btn-outline {
+            @apply bg-transparent border-2 border-indigo-500 text-indigo-400 hover:bg-indigo-500 hover:text-white;
+        }
+        /* Skill icon container */
+        .skill-card {
+            @apply bg-gray-800 p-6 rounded-lg flex flex-col items-center justify-center gap-4 transition-all duration-300 hover:bg-indigo-600 hover:-translate-y-1;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-300">
+
+    <!-- Header & Navigation -->
+    <header class="bg-gray-900/70 backdrop-blur-md shadow-lg shadow-black/20 sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-white">Neelapu Surya Manikanta</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#profile" class="text-gray-300 hover:text-indigo-400 transition-colors">Profile</a>
+                <a href="#skills" class="text-gray-300 hover:text-indigo-400 transition-colors">Skills</a>
+                <a href="#projects" class="text-gray-300 hover:text-indigo-400 transition-colors">Projects</a>
+                <a href="#education" class="text-gray-300 hover:text-indigo-400 transition-colors">Education</a>
+                <a href="#contact" class="text-gray-300 hover:text-indigo-400 transition-colors">Contact</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden flex items-center p-2 text-gray-300">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-800">
+            <a href="#profile" class="block py-3 px-4 text-sm hover:bg-gray-700">Profile</a>
+            <a href="#skills" class="block py-3 px-4 text-sm hover:bg-gray-700">Skills</a>
+            <a href="#projects" class="block py-3 px-4 text-sm hover:bg-gray-700">Projects</a>
+            <a href="#education" class="block py-3 px-4 text-sm hover:bg-gray-700">Education</a>
+            <a href="#contact" class="block py-3 px-4 text-sm hover:bg-gray-700">Contact</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="relative text-center py-32 sm:py-40 px-6 overflow-hidden">
+             <div class="absolute inset-0 bg-grid-gray-800/20 [mask-image:linear-gradient(to_bottom,white_5%,transparent_90%)]"></div>
+            <div class="relative">
+                <h1 class="text-5xl md:text-7xl font-extrabold text-white leading-tight mb-4 animate-fade-in-down">Hi, I'm Neelapu Surya Manikanta</h1>
+                <p class="text-lg md:text-xl text-indigo-300 mb-8 animate-fade-in-up">Computer Science Student & Aspiring Developer</p>
+                <a href="#projects" class="btn btn-primary text-lg px-8 py-4 rounded-full">View My Work</a>
+            </div>
+        </section>
+
+        <!-- Profile Section -->
+        <section id="profile" class="section">
+            <div class="container mx-auto px-6">
+                <div class="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-center gap-10 md:gap-16">
+                    <div class="flex-shrink-0">
+                        <img class="w-48 h-48 rounded-full shadow-2xl shadow-indigo-500/20 object-cover" src="https://placehold.co/300x300/e0e7ff/3730a3?text=NSM" alt="Neelapu Surya Manikanta">
+                    </div>
+                    <div class="text-center md:text-left">
+                        <h2 class="text-4xl font-bold text-white mb-2">Neelapu Surya Manikanta</h2>
+                        <p class="text-xl text-indigo-400 font-semibold mb-6">Computer Science Student</p>
+                        <div class="flex flex-wrap justify-center md:justify-start gap-4 mb-6">
+                            <a href="mailto:neelapusuryamanikanta@gmail.com" class="flex items-center gap-2 bg-gray-700/50 hover:bg-gray-700 p-2 rounded-lg transition-colors">
+                                <svg class="w-5 h-5 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                                <span class="text-sm">Email</span>
+                            </a>
+                            <a href="https://linkedin.com/in/surya-manikanta-neelapu" target="_blank" class="flex items-center gap-2 bg-gray-700/50 hover:bg-gray-700 p-2 rounded-lg transition-colors">
+                                <svg class="w-5 h-5 text-indigo-400" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                                <span class="text-sm">LinkedIn</span>
+                            </a>
+                            <a href="https://github.com/nsmanikanta" target="_blank" class="flex items-center gap-2 bg-gray-700/50 hover:bg-gray-700 p-2 rounded-lg transition-colors">
+                                 <svg class="w-5 h-5 text-indigo-400" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.492.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd" /></svg>
+                                <span class="text-sm">GitHub</span>
+                            </a>
+                             <a href="tel:6305335224" class="flex items-center gap-2 bg-gray-700/50 hover:bg-gray-700 p-2 rounded-lg transition-colors">
+                                <svg class="w-5 h-5 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498A1 1 0 0119 15.72V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                                <span class="text-sm">Phone</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Career Objective -->
+        <section id="objective" class="section">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title"><span class="gradient-text">Career Objective</span></h2>
+                <div class="max-w-3xl mx-auto text-center text-lg sm:text-xl text-gray-400 leading-relaxed">
+                    <p>
+                        To work in an organization with dedication to the job and to achieve the vision and mission of the company, as well as an individual and in association with the team.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Skills -->
+        <section id="skills" class="section bg-gray-900/50">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title"><span class="gradient-text">Technical Skills</span></h2>
+                <div class="max-w-5xl mx-auto grid grid-cols-2 sm:grid-cols-4 gap-6">
+                    <!-- Java -->
+                    <div class="skill-card">
+                        <svg class="w-12 h-12 text-orange-400" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><title>Java</title><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1.83 5.59c.23-.23.54-.36.86-.36s.63.13.86.36c.23.23.36.54.36.86s-.13.63-.36.86a1.21 1.21 0 0 1-1.72 0c-.23-.23-.36-.54-.36-.86s.13-.63.36-.86zm5.8 9.04c-.32.32-.75.5-1.22.5s-.9-.18-1.22-.5c-.32-.32-.5-.75-.5-1.22s.18-.9.5-1.22c.32-.32.75-.5 1.22-.5s.9.18 1.22.5c.32.32.5.75.5 1.22s-.18.9-.5 1.22zm-2.7-6.07c-.42 0-.83.1-1.2.28l-1.5-1.5c.53-.67 1.23-1.2 2.05-1.55.82-.35 1.7-.5 2.65-.4V9.8c-1.1 0-2.1.4-2.85 1.15l-1.45-1.45C13.2 8.5 14.5 8 16 8v-.75c0-1.24-1.01-2.25-2.25-2.25S11.5 6.01 11.5 7.25V10c0 .41-.34.75-.75.75s-.75-.34-.75-.75V8.5c0-1.24-1.01-2.25-2.25-2.25S5.5 7.26 5.5 8.5v4c0 1.24 1.01 2.25 2.25 2.25S10 13.74 10 12.5v-1.1c.6-.5 1.3-.8 2.1-.8.8 0 1.5.2 2.1.6.6.4 1.1.9 1.4 1.5.3.6.5 1.3.5 2.1s-.2 1.5-.5 2.1c-.3.6-.8 1.1-1.4 1.5-.6.4-1.3.6-2.1.6s-1.5-.2-2.1-.6c-.6-.4-1.1-.9-1.4-1.5-.3-.6-.5-1.3-.5-2.1H8c0 1.1.4 2.1 1.15 2.85l1.45-1.45c-.28-.37-.45-.8-.45-1.25s.17-.88.45-1.25l1.45 1.45c-.75.75-1.85 1.15-2.85 1.15v.75c0 1.24 1.01 2.25 2.25 2.25s2.25-1.01 2.25-2.25v-2.5c0-.41-.34-.75-.75-.75s.75.34.75.75v1.25c0 .8-.2 1.5-.6 2.1-.4.6-.9 1.1-1.5 1.4-.6.3-1.3.5-2.1.5s-1.5-.2-2.1-.5c-.6-.3-1.1-.8-1.5-1.4-.4-.6-.6-1.3-.6-2.1s.2-1.5.6-2.1c.4-.6.9-1.1 1.5-1.4.6-.3 1.3-.5 2.1-.5z"/></svg>
+                        <p class="font-semibold text-lg text-white">Java</p>
+                    </div>
+                    <!-- Python -->
+                    <div class="skill-card">
+                        <svg class="w-12 h-12 text-blue-400" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><title>Python</title><path d="M11.964 1.333c-3.13 0-5.667 2.537-5.667 5.667v2.333h5.667c3.13 0 5.667-2.537 5.667-5.667S15.094 1.333 11.964 1.333zM11.964 8.333H6.3v5.667H12c3.13 0 5.667 2.537 5.667 5.667s-2.537 5.667-5.667 5.667-5.667-2.537-5.667-5.667v-2.333H.63v2.333c0 3.13 2.537 5.667 5.667 5.667s5.667-2.537 5.667-5.667v-5.667h5.667c0 3.13-2.537 5.667-5.667 5.667s-5.667-2.537-5.667-5.667V8.333z"/></svg>
+                        <p class="font-semibold text-lg text-white">Python</p>
+                    </div>
+                    <!-- C++ -->
+                    <div class="skill-card">
+                        <svg class="w-12 h-12 text-sky-400" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><title>C++</title><path d="M14.173 1.405a.73.73 0 0 0-.72-.72H.72a.73.73 0 0 0-.72.72v21.19a.73.73 0 0 0 .72.72h22.56a.73.73 0 0 0 .72-.72V8.405h-9.827zm-3.454 6.54h-1.44v-1.44h-1.44v1.44H6.399v1.44h1.44v1.44h1.44V9.385h1.44zm3.6 0h-1.44v-1.44h-1.44v1.44h-1.44v1.44h1.44v1.44h1.44V9.385h1.44zm6.12 11.52h-1.44v-1.44h-1.44v1.44h-1.44v1.44h1.44v1.44h1.44v-1.44h1.44zm3.6 0h-1.44v-1.44h-1.44v1.44h-1.44v1.44h1.44v1.44h1.44v-1.44h1.44z"/></svg>
+                        <p class="font-semibold text-lg text-white">C++</p>
+                    </div>
+                    <!-- HTML5 -->
+                    <div class="skill-card">
+                        <svg class="w-12 h-12 text-orange-500" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><title>HTML5</title><path d="M1.5 0h21l-1.91 21.563L11.977 24l-8.564-2.438L1.5 0zm7.031 9.75l-.232-2.718 10.059.003.23-2.622-13.23.002.526 6.022h8.926l-.338 3.554-2.635.734-2.638-.733-.173-1.926H5.9l.339 3.826 5.743 1.594 5.74-1.594.679-7.562H8.531z"/></svg>
+                        <p class="font-semibold text-lg text-white">HTML5</p>
+                    </div>
+                    <!-- CSS3 -->
+                    <div class="skill-card">
+                        <svg class="w-12 h-12 text-blue-500" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><title>CSS3</title><path d="M1.5 0h21l-1.91 21.563L11.977 24l-8.564-2.438L1.5 0zm17.09 4.913H5.41l.216 2.622h10.958l-.216 2.288H5.842l.216 2.622h10.526l-.326 3.426-2.91.804-2.956-.81-.173-1.86H7.2l.338 3.634 4.438 1.363 4.48-1.363.527-5.525h-4.61l.216-2.287h4.61l.216-2.623z"/></svg>
+                        <p class="font-semibold text-lg text-white">CSS3</p>
+                    </div>
+                    <!-- JavaScript -->
+                    <div class="skill-card">
+                        <svg class="w-12 h-12 text-yellow-400" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><title>JavaScript</title><path d="M0 0h24v24H0V0zm22.034 18.272c-.175 1.095-.82 1.942-2.223 2.54L15.4 22.498c-.645.27-1.336.405-2.074.405-1.62 0-2.91-.423-3.854-1.27-1.028-.9-1.542-2.062-1.542-3.486 0-1.282.39-2.373 1.17-3.273.78-.9 1.833-1.35 3.158-1.35.82 0 1.542.18 2.16.54s1.08.84 1.38 1.44c.12.24.18.495.18.765 0 .375-.104.683-.314.922-.21.24-.51.36-.9.36-.33 0-.615-.105-.855-.315-.24-.21-.435-.518-.585-.923-.225-.615-.563-1.08-.99-1.395-.428-.315-.93-.472-1.493-.472-1.02 0-1.803.375-2.348 1.125-.546.75-.82 1.71-.82 2.88 0 1.23.285 2.22.855 2.97.57.75 1.38 1.125 2.43 1.125.615 0 1.178-.142 1.688-.428.51-.285.885-.697 1.125-1.235.105-.225.27-.42.495-.585s.51-.255.855-.255c.345 0 .622.105.832.315.21.21.315.48.315.81 0 .225-.045.435-.135.63zM22.034 18.272z"/></svg>
+                        <p class="font-semibold text-lg text-white">JavaScript</p>
+                    </div>
+                    <!-- Node.js -->
+                    <div class="skill-card">
+                        <svg class="w-12 h-12 text-green-400" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><title>Node.js</title><path d="M22.122 10.032L13.84 4.56C12.83 3.99 11.17 3.99 10.16 4.56l-8.282 5.472c-1 .57-1.33 1.83-.76 2.83l.001.002 4.142 7.174c.57 1 1.83 1.33 2.83.76l8.282-5.472c1-.57 1.33-1.83.76-2.83l-.001-.002-4.142-7.174zM12 13.33a1.33 1.33 0 110-2.66 1.33 1.33 0 010 2.66zM11.996 9.6a.4.4 0 00-.4.4v.002l-.004 2.26c0 .22.18.4.4.4l.004-.002h4.26c.22 0 .4-.18.4-.4v-.004l.002-2.26a.4.4 0 00-.4-.4l-.002.004h-4.26z"/></svg>
+                        <p class="font-semibold text-lg text-white">Node.js</p>
+                    </div>
+                    <!-- GitHub -->
+                    <div class="skill-card">
+                        <svg class="w-12 h-12 text-gray-300" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><title>GitHub</title><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                        <p class="font-semibold text-lg text-white">Git</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section id="projects" class="section">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title"><span class="gradient-text">Projects & Internships</span></h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="card">
+                        <img src="https://placehold.co/600x400/1f2937/a78bfa?text=Internship" alt="Google AI/ML Internship" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="font-bold text-lg text-white mb-2">Google Virtual AI-ML Internship</h3>
+                            <p class="text-gray-400 mb-4">This 2-month virtual internship, offered in collaboration with EduSkills and AICTE, provides real-world exposure to AI/ML through online coursework, assessments, and guided projects. Benefit from expert mentorship sessions—making it a valuable stepping stone for tech careers.</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="https://placehold.co/600x400/1f2937/a78bfa?text=Project" alt="Online Voting System" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="font-bold text-lg text-white mb-2">Online Voting System</h3>
+                            <p class="text-gray-400 mb-4">This project is a web-based application built with Java. It helps people to vote online securely. Voters can log in, choose a candidate, and vote. The system saves each vote safely and ensures no one votes twice.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Education & Certifications -->
+        <section id="education" class="section bg-gray-900/50">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title"><span class="gradient-text">Education & Certifications</span></h2>
+                <div class="grid md:grid-cols-2 gap-16 items-start">
+                    <div>
+                        <h3 class="text-2xl font-bold text-center mb-8 text-white">Education</h3>
+                         <div class="space-y-6">
+                            <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+                                <h4 class="text-xl font-bold text-white">B.Tech in Computer Science</h4>
+                                <p class="text-indigo-400 font-semibold">Raghu Engineering College | Visakhapatnam, A.P</p>
+                                <p class="text-gray-500">2022 – 2026</p>
+                            </div>
+                            <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+                                <h4 class="text-xl font-bold text-white">M.P.C</h4>
+                                <p class="text-indigo-400 font-semibold">Narayana Junior College | Rajahmundry, A.P</p>
+                                <p class="text-gray-500">2020 – 2022</p>
+                            </div>
+                             <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+                                <h4 class="text-xl font-bold text-white">SSC</h4>
+                                <p class="text-indigo-400 font-semibold">Sri Sadguru Vidyalayam | Rajahmundry, A.P</p>
+                                <p class="text-gray-500">2019 – 2020</p>
+                            </div>
+                         </div>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-center mb-8 text-white">Certifications</h3>
+                        <div class="space-y-6">
+                            <div class="bg-gray-800 p-6 rounded-lg shadow-lg text-center">
+                                <p class="text-lg text-white">IBM Certified Excel Essentials for Data Analytics</p>
+                                <p class="text-indigo-400 font-semibold">Coursera</p>
+                            </div>
+                            <div class="bg-gray-800 p-6 rounded-lg shadow-lg text-center">
+                                <p class="text-lg text-white">Programming in Java</p>
+                                <p class="text-indigo-400 font-semibold">NPTEL</p>
+                            </div>
+                             <div class="bg-gray-800 p-6 rounded-lg shadow-lg text-center">
+                                <p class="text-lg text-white">Java Programming</p>
+                                <p class="text-indigo-400 font-semibold">Skill Rack</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Soft Skills & Interests -->
+        <section id="more-about-me" class="section">
+            <div class="container mx-auto px-6">
+                <div class="grid md:grid-cols-2 gap-16">
+                    <div>
+                        <h3 class="text-2xl font-bold text-white mb-6 text-center">Soft Skills</h3>
+                        <div class="flex flex-wrap justify-center gap-3">
+                            <span class="bg-gray-800 shadow-sm rounded-full px-4 py-2 text-white">Problem Solving</span>
+                            <span class="bg-gray-800 shadow-sm rounded-full px-4 py-2 text-white">Team Work</span>
+                            <span class="bg-gray-800 shadow-sm rounded-full px-4 py-2 text-white">Easy Adoptable to Environment</span>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-white mb-6 text-center">Interests</h3>
+                         <div class="flex flex-wrap justify-center gap-3">
+                            <span class="bg-gray-800 shadow-sm rounded-full px-4 py-2 text-white">Travelling</span>
+                            <span class="bg-gray-800 shadow-sm rounded-full px-4 py-2 text-white">Learning New Technologies</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Contact Section -->
+        <section id="contact" class="section bg-gray-900/50">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="section-title"><span class="gradient-text">Get In Touch</span></h2>
+                <p class="max-w-2xl mx-auto text-lg text-gray-400 mb-8">
+                    I'm currently looking for new opportunities. My inbox is always open. Whether you have a question or just want to say hi, I'll get back to you!
+                </p>
+                <a href="mailto:neelapusuryamanikanta@gmail.com" class="btn btn-primary text-lg px-8 py-4 rounded-full inline-block">Say Hello</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="border-t border-gray-800">
+        <div class="container mx-auto px-6 py-8 text-center text-gray-500">
+            <div class="flex justify-center space-x-6 mb-4">
+                <a href="https://github.com/suryamanikanta-neelapu" target="_blank" class="hover:text-indigo-400 transition-colors">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.492.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd" /></svg>
+                </a>
+                <a href="https://linkedin.com/in/surya-manikanta-neelapu" target="_blank" class="hover:text-indigo-400 transition-colors">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                </a>
+                <a href="tel:6305335224" class="hover:text-indigo-400 transition-colors">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M6.62 10.79a15.22 15.22 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.24.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"></path></svg>
+                </a>
+            </div>
+            &copy; <span id="current-year"></span> Neelapu Surya Manikanta. All Rights Reserved.
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            const sections = document.querySelectorAll('.section');
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                rootMargin: '0px',
+                threshold: 0.1
+            });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+        });
+    </script>
+</body>
+</html>
